@@ -1,4 +1,4 @@
-module github.com/justwatch/facebook-marketing-api-golang-sdk
+module github.com/JoshuaDietz/facebook-marketing-api-golang-sdk-v19-test
 
 go 1.20
 
