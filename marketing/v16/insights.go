@@ -179,7 +179,7 @@ type Insight struct {
 	PublisherPlatform                string                 `json:"publisher_platform"`
 	PlatformPosition                 string                 `json:"platform_position"`
 	Clicks                           uint64                 `json:"clicks,string"`
-	OutboundClicks                   []OutboundClicks       `json:"outbound_clicks,omitempty"`
+	OutboundClicks                   []OutboundClicks       `json:"outbound_clicks"`
 	DateStart                        string                 `json:"date_start"`
 	DateStop                         string                 `json:"date_stop"`
 	Frequency                        float64                `json:"frequency,string"`
