@@ -160,6 +160,11 @@ func (ir *InsightsRequest) GenerateReport(ctx context.Context, c chan<- Insight)
 	return count, nil
 }
 
+type OutboundClicks struct {
+	Value      string `json:"value"`
+	ActionType string `json:"action_type"`
+}
+
 // Insight contains insight data for an facebook graph API object, broken down by the desired day.
 type Insight struct {
 	AccountID                        string                 `json:"account_id"`
@@ -174,6 +179,7 @@ type Insight struct {
 	PublisherPlatform                string                 `json:"publisher_platform"`
 	PlatformPosition                 string                 `json:"platform_position"`
 	Clicks                           uint64                 `json:"clicks,string"`
+	OutboundClicks                   []OutboundClicks       `json:"outbound_clicks,omitempty"`
 	DateStart                        string                 `json:"date_start"`
 	DateStop                         string                 `json:"date_stop"`
 	Frequency                        float64                `json:"frequency,string"`
@@ -196,6 +202,19 @@ type Insight struct {
 	DeviceType                       string                 `json:"impression_device"`
 	Region                           string                 `json:"region"`
 	Country                          string                 `json:"country"`
+}
+
+func (i Insight) GetOutboundClicks() int {
+	var outboundClicks int = 0
+
+	if len(i.OutboundClicks) > 0 {
+		convertedObClicks, err := strconv.Atoi(i.OutboundClicks[0].Value)
+		if err == nil {
+			outboundClicks = convertedObClicks
+		}
+	}
+
+	return outboundClicks
 }
 
 // GetAge returns the min and max age from the insights age field.
