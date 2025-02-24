@@ -3,7 +3,7 @@ package v16
 import (
 	"context"
 
-	"github.com/JoshuaDietz/facebook-marketing-api-golang-sdk-v19-test/fb"
+	"github.com/easy-marketing/facebook-marketing-api-golang-sdk-v19-test/fb"
 )
 
 // EventService contains all methods for working on events.

@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/JoshuaDietz/facebook-marketing-api-golang-sdk-v19-test/fb"
+	"github.com/easy-marketing/facebook-marketing-api-golang-sdk-v19-test/fb"
 	"github.com/go-kit/kit/log"
 	"github.com/go-kit/kit/log/level"
 )
